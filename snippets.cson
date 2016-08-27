@@ -1,1 +1,273 @@
-/Users/benjaminhughes/Dropbox/atom-backup/snippets.cson
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it here:
+# https://github.com/bevry/cson#what-is-cson
+
+'.source.js':
+  'import':
+    'prefix': 'import'
+    'body': 'import $1 from \'$2\'\n$3'
+  'console log':
+    'prefix': 'log'
+    'body': 'console.log($1)\n$2'
+  'comment-function':
+    'prefix': 'comment-function'
+    'body': """
+    /**
+     * $1
+     * @param \{$2\} $3
+     * @returns \{$4\} $5
+     */
+    """
+
+  'Promise':
+    'prefix': 'Promise'
+    'body': 'new Promise((resolve, reject) => {$1});'
+
+  'react-natve component':
+    'prefix': 'react-native-component'
+    'body': """
+      import React, {Component, PropTypes} from 'react';
+      import {
+        StyleSheet,
+        Text,
+        View,
+      } from 'react-native';
+
+      class $1 extends Component {
+        static displayName = \'$1\';
+
+        static propTypes = {};
+
+        static defaultProps = {};
+
+        render() {
+          return (
+            <View style={styles.container}>
+              <Text>$1 component $2</Text>
+            </View>
+          );
+        }
+      }
+
+      export const styles = StyleSheet.create({
+        container:{},
+      });
+
+      export default $1;
+
+    """
+
+  'react component':
+    'prefix': 'react-component'
+    'body': """
+      import React, {
+        Component,
+        PropTypes,
+      } from 'react';
+      $2
+      class ${1:MyComponent} extends Component {
+        static displayName = '${1:MyComponent}';
+
+        static propTypes = {};
+
+        static defaultProps = {};
+
+        render() {
+          return (
+            ${3:<div>This is ${1:MyComponent} $4</div>}
+          );
+        }
+      }
+
+      export default ${1:MyComponent};$5
+
+    """
+  'react redux connected component':
+    'prefix': 'react-redux-component'
+    'body': """
+      import React, {
+        Component,
+        PropTypes,
+      } from 'react';
+      import {connect} from 'react-redux';
+      $2
+      export class ${1:MyComponent} extends Component {
+        static displayName = '${1:MyComponent}';
+
+        static propTypes = {
+
+        };
+
+        static defaultProps = {};
+
+        render() {
+          return (
+            ${3:<div>This is ${1:MyComponent} $4</div>}
+          );
+        }
+      }
+
+      const mapStateToProps = ({someReducer}) => ({
+        someProp: 'test'
+      });
+
+      const boundActions = {};
+
+      export const ${1:MyComponent}Connected = connect(mapStateToProps, boundActions)(${1:MyComponent});
+
+    """
+  'react statless component':
+    'prefix': 'react-stateless-component'
+    'body': """
+      import React, {PropTypes} from 'react';
+
+      const ${1:MyComponent} = ($2) => (
+        <${3:div} className=\"$4\">${5:My stateless component}</${3:div}>
+      );
+
+      ${1:MyComponent}.propTypes = {$6};
+
+      ${1:MyComponent}.defaultProps = {$7};
+
+      ${1:MyComponent}.displayName = '${1:MyComponent}';
+
+      export default ${1:MyComponent};
+    """
+  'redux-reducer':
+    'prefix': 'redux-reducer'
+    'body': """
+      import {${1:Data}Record} from './${1:Data}Record';
+      import {
+      } from './actions';
+
+      const DEFAULT_${2:DATA}_STATE = new ${1:Data}Record();
+
+      export function ${1:Data}Reducer(state = DEFAULT_${2:DATA}_STATE, {type, payload} = {}) {
+        switch (type) {
+          default:
+            return state;
+        }
+      }
+      $3
+
+    """
+  'redux-record':
+    'prefix': 'redux-record'
+    'body': """
+      import {Record} from 'immutable';
+
+      export const ${2:DATA_}DEFAULT_STATE = {};
+
+      const BaseRecord = Record(${2:DATA_}DEFAULT_STATE);
+
+      export class ${1:Data}Record extends BaseRecord {}
+      $3
+    """
+  'redux-action-simple':
+    'prefix': 'redux-action-simple'
+    'body': """
+      export const ${1:ACTION_NAME} = '${1:ACTION_NAME}';
+
+      export const ${2:actionName} = ({$3}) => ({
+        type: ${1:ACTION_NAME},
+        payload: {$3}
+      });
+      $4
+    """
+  'redux-action-async':
+    'prefix': 'redux-action-async'
+    'body': """
+      export const ${1:ACTION_NAME} = '${1:ACTION_NAME}';
+      export const ${1:ACTION_NAME}_SUCCESS = '${1:ACTION_NAME}_SUCCESS';
+      export const ${1:ACTION_NAME}_FAILURE = '${1:ACTION_NAME}_FAILURE';
+
+      export const ${2:actionName} = () => {
+        return async (dispatch) => {
+          dispatch({type: ${1:ACTION_NAME}});
+
+          try {
+            const response = await fetch('http://someurl.com');
+            dispatch({type: ${1:ACTION_NAME}_SUCCESS, payload: response.body});
+          } catch (error) {
+            dispatch({type: ${1:ACTION_NAME}_FAILURE, payload: error});
+            throw error;
+          }
+        };
+      };
+      $3
+    """
+  'redux-index':
+    'prefix': 'redux-index'
+    'body': """
+      export * from './actions';
+      export * from './${1:Data}Reducer';
+      export * from './${1:Data}Record';
+      $2
+    """
+  'import':
+    'prefix': 'import'
+    'body': 'import $1 from \'$2\';\n$3'
+  'jasmine.describe':
+    'prefix': 'describe'
+    'body': 'describe(\'$1\', function() {$2});'
+  'jasmine.beforeEach':
+    'prefix': 'beforeEach'
+    'body': 'beforeEach(function() {$1});'
+  'jasmine.it':
+    'prefix': 'it'
+    'body': 'it(\'$1\', function() {$2});'
+  'jsx':
+    'prefix': 'jsx'
+    'body': '<${1:div} ${2:className=\'$3\'}$4>\n\t$5\n</${1:div}>'
+  'jsx-div':
+    'prefix': 'div'
+    'body': '<div ${1:className=\'$2\'}${4: }>\n\t$5\n</div>'
+  'flex':
+    'prefix': 'flex'
+    'body': """
+      ${1:justifyContent: '${2:center}}',${3:
+      alignItems: '${4:center}'},${5:
+      flexDirection: '${6:column}'},
+      $7
+    """
+  'PropTypes':
+    'prefix': 'PropTypes'
+    'body': 'PropTypes.${1:string}${2:.isRequired},$3'
+  'import common component':
+    'prefix': 'import-common-component'
+    'body': 'import ${1} from \'@common/js/components/${1}/${1}\';\n${2}'
+'.source.scss':
+  'include-flex':
+    'prefix': 'flex'
+    'body': """
+      display: flex;${1:
+      justify-content: ${2:center;}}${3:
+      align-items: ${4:center;}}${5:
+      flex-direction: ${6:column;}}
+      $7
+    """
+'.source.python':
+  'npm_library':
+    'prefix': 'npm_library'
+    'body': 'npm_library(\n\tname=\'$1\',\n\tversion=\'$2\',\n\tvisibility=[\'PUBLIC\'],\n)\n$3'
+  'common_js':
+    'prefix': '//common/js'
+    'body': '//common/js/'
+  'third_party/js':
+    'prefix': '//third_party/js'
+    'body': '//third_party/js:$1'

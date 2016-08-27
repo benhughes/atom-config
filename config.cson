@@ -1,1 +1,50 @@
-/Users/benjaminhughes/Dropbox/atom-backup/config.cson
+"*":
+  autosave:
+    enabled: true
+  "autosave-plus":
+    enabled: true
+  core:
+    customFileTypes:
+      "source.python": [
+        "BUILD"
+        "build_defs"
+      ]
+    disabledPackages: [
+      "terminal-panel"
+    ]
+  editor:
+    invisibles: {}
+  "exception-reporting":
+    userId: "ed07e8f5-587b-e6f1-39e5-bdef069f8693"
+  "file-types":
+    $caseSensitive: true
+    $debug: true
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  "flex-tool-bar": {}
+  "js-hyperclick": {}
+  jumpy:
+    highContrast: true
+    matchPattern: "([A-Z]+([0-9a-z])*)|[<a-z0-9]{2,}"
+  linter:
+    errorPanelHeight: 41
+  "linter-eslint":
+    useGlobalEslint: true
+  navigate: {}
+  nuclide:
+    remoteProjectsConfig: []
+  "nuclide-home":
+    showHome: true
+  "spell-check":
+    grammars: [
+      "source.js"
+    ]
+  "tool-bar":
+    position: "Left"
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
+".python.source":
+  editor:
+    autoIndentOnPaste: true
