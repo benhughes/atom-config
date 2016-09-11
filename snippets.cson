@@ -64,7 +64,7 @@
         }
       }
 
-      export const styles = StyleSheet.create({
+      const styles = StyleSheet.create({
         container:{},
       });
 
@@ -131,13 +131,18 @@
       export const ${1:MyComponent}Connected = connect(mapStateToProps, boundActions)(${1:MyComponent});
 
     """
-  'react statless component':
-    'prefix': 'react-stateless-component'
+  'react native statless component':
+    'prefix': 'react-native-stateless-component'
     'body': """
-      import React, {PropTypes} from 'react';
+      import React, {Component, PropTypes} from 'react';
+      import {
+        StyleSheet,
+        Text,
+        View,
+      } from 'react-native';
 
-      const ${1:MyComponent} = ($2) => (
-        <${3:div} className=\"$4\">${5:My stateless component}</${3:div}>
+      export const ${1:MyComponent} = ($2) => (
+        <${3:Text} style={styles.container}>${5:My stateless component}</${3:Text}>
       );
 
       ${1:MyComponent}.propTypes = {$6};
@@ -146,7 +151,24 @@
 
       ${1:MyComponent}.displayName = '${1:MyComponent}';
 
-      export default ${1:MyComponent};
+      const styles = StyleSheet.create({
+        container:{},
+      });
+    """
+  'react statless component':
+    'prefix': 'react-stateless-component'
+    'body': """
+      import React, {PropTypes} from 'react';
+
+      export const ${1:MyComponent} = ($2) => (
+        <${3:div} className=\"$4\">${5:My stateless component}</${3:div}>
+      );
+
+      ${1:MyComponent}.propTypes = {$6};
+
+      ${1:MyComponent}.defaultProps = {$7};
+
+      ${1:MyComponent}.displayName = '${1:MyComponent}';
     """
   'redux-reducer':
     'prefix': 'redux-reducer'
