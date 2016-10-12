@@ -1,30 +1,76 @@
-core:
-  title: "Core"
-  paths: [
-    "/Users/benjaminhughes/code-repo/core"
-  ]
-onboarding:
-  title: "Onboarding"
-  paths: [
-    "/Users/benjaminhughes/code-repo/core/onboarding"
-    "/Users/benjaminhughes/code-repo/core/common/js"
-  ]
-killik:
-  title: "Killik"
-  paths: [
-    "/Users/benjaminhughes/code-repo/core/killik"
-    "/Users/benjaminhughes/code-repo/core/common/js"
-  ]
-vaultadminapp:
-  title: "Vault Admin App"
-  paths: [
-    "/Users/benjaminhughes/code-repo/core/vault/admin_app"
-    "/Users/benjaminhughes/code-repo/core/vault/common"
-    "/Users/benjaminhughes/code-repo/core/common/js"
-    "/Users/benjaminhughes/code-repo/core/third_party/js"
-  ]
-tasknotes:
-  title: "Task Notes"
-  paths: [
-    "/Users/benjaminhughes/Dropbox/Todoist"
-  ]
+[
+  {
+    title: "Core"
+    group: ""
+    paths: [
+      "/Users/benjaminhughes/code-repo/core"
+    ]
+    icon: "icon-chevron-right"
+    settings: {}
+    devMode: false
+    template: null
+  }
+  {
+    title: "Onboarding"
+    group: ""
+    paths: [
+      "/Users/benjaminhughes/code-repo/core/onboarding"
+      "/Users/benjaminhughes/code-repo/core/common/js"
+    ]
+    icon: "icon-chevron-right"
+    settings: {}
+    devMode: false
+    template: null
+  }
+  {
+    title: "Killik"
+    group: ""
+    paths: [
+      "/Users/benjaminhughes/code-repo/core/killik"
+      "/Users/benjaminhughes/code-repo/core/common/js"
+    ]
+    icon: "icon-chevron-right"
+    settings: {}
+    devMode: false
+    template: null
+  }
+  {
+    title: "Vault Admin App"
+    group: ""
+    paths: [
+      "/Users/benjaminhughes/code-repo/core/vault/admin_app"
+      "/Users/benjaminhughes/code-repo/core/vault/common"
+      "/Users/benjaminhughes/code-repo/core/common/js"
+      "/Users/benjaminhughes/code-repo/core/third_party/js"
+    ]
+    icon: "icon-chevron-right"
+    settings: {}
+    devMode: false
+    template: null
+  }
+  {
+    title: "Task Notes"
+    group: ""
+    paths: [
+      "/Users/benjaminhughes/Dropbox/Todoist"
+    ]
+    icon: "icon-chevron-right"
+    settings: {}
+    devMode: false
+    template: null
+  }
+  {
+    title: "Siphon"
+    group: "Killik"
+    paths: [
+      "/Users/benjaminhughes/code-repo/core/killik/revver"
+      "/Users/benjaminhughes/code-repo/core/common/js"
+      "/Users/benjaminhughes/code-repo/core/killik/common"
+      "/Users/benjaminhughes/code-repo/core/third_party/js"
+    ]
+    icon: "icon-chevron-right"
+    settings: {}
+    devMode: false
+    template: null
+  }
+]

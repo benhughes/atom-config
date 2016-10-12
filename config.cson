@@ -1,4 +1,7 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "ef96123c-6419-4c66-838d-e73329ae9c4f"
   autosave:
     enabled: true
   "autosave-plus":
@@ -9,8 +12,8 @@
         "BUILD"
         "build_defs"
       ]
-    disabledPackages: [
-      "terminal-panel"
+    packagesWithKeymapsDisabled: [
+      "sort-lines"
     ]
   editor:
     invisibles: {}
@@ -30,11 +33,24 @@
     errorPanelHeight: 41
   "linter-eslint":
     useGlobalEslint: true
+  minimap:
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      "minimap-autohide": true
+      "minimap-autohideDecorationsZIndex": 0
+    scrollAnimation: true
   navigate: {}
   nuclide:
     remoteProjectsConfig: []
   "nuclide-home":
     showHome: true
+  "package-sync":
+    forceOverwrite: true
+  pigments:
+    groupPaletteColors: "by file"
+    mergeColorDuplicates: true
+    sortPaletteColors: "by name"
   "spell-check":
     grammars: [
       "source.js"

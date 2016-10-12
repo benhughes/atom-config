@@ -38,6 +38,7 @@
     'prefix': 'Promise'
     'body': 'new Promise((resolve, reject) => {$1});'
 
+# ------ React components
   'react-natve component':
     'prefix': 'react-native-component'
     'body': """
@@ -170,6 +171,37 @@
 
       ${1:MyComponent}.displayName = '${1:MyComponent}';
     """
+# ------ React Life cycle
+  "React: componentDidMount() { ... }":
+      prefix: "componentDidMount"
+      body: "componentDidMount() {\n\t${1}\n}${2}"
+
+    "React: componentDidUpdate(pp, ps) { ... }":
+      prefix: "componentDidUpdate"
+      body: "componentDidUpdate(prevProps, prevState) {\n\t${1}\n}${2}"
+
+    "React: componentWillMount() { ... }":
+      prefix: "componentWillMount"
+      body: "componentWillMount() {\n\t${1}\n}${2}"
+
+    "React: componentWillReceiveProps(np) { ... }":
+      prefix: "componentWillReceiveProps"
+      body: "componentWillReceiveProps(nextProps) {\n\t${1}\n}${2}"
+
+    "React: componentWillUnmount() { ... }":
+      prefix: "componentWillUnmount"
+      body: "componentWillUnmount() {\n\t${1}\n}${2}"
+
+    "React: componentWillUpdate(np, ns) { ... }":
+      prefix: "componentWillUpdate"
+      body: "componentWillUpdate(nextProps, nextState) {\n\t${1}\n}${2}"
+
+    "React: shouldComponentUpdate(np, ns) { ... }":
+      prefix: "shouldComponentUpdate"
+      body: "shouldComponentUpdate(nextProps, nextState) {\n\t${1}\n}${2}"
+
+# ------ Redux
+
   'redux-reducer':
     'prefix': 'redux-reducer'
     'body': """
@@ -273,6 +305,8 @@
   'import common component':
     'prefix': 'import-common-component'
     'body': 'import ${1} from \'@common/js/components/${1}/${1}\';\n${2}'
+
+
 '.source.scss':
   'include-flex':
     'prefix': 'flex'
@@ -283,6 +317,8 @@
       flex-direction: ${6:column;}}
       $7
     """
+
+
 '.source.python':
   'npm_library':
     'prefix': 'npm_library'
