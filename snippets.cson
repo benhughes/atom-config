@@ -276,21 +276,27 @@
   'import':
     'prefix': 'import'
     'body': 'import $1 from \'$2\';\n$3'
+
   'jasmine.describe':
     'prefix': 'describe'
     'body': 'describe(\'$1\', function() {$2});'
+
   'jasmine.beforeEach':
     'prefix': 'beforeEach'
     'body': 'beforeEach(function() {$1});'
+
   'jasmine.it':
     'prefix': 'it'
     'body': 'it(\'$1\', function() {$2});'
+
   'jsx':
     'prefix': 'jsx'
     'body': '<${1:div} ${2:className=\'$3\'}$4>\n\t$5\n</${1:div}>'
+
   'jsx-div':
     'prefix': 'div'
     'body': '<div ${1:className=\'$2\'}${4: }>\n\t$5\n</div>'
+
   'flex':
     'prefix': 'flex'
     'body': """
@@ -299,12 +305,33 @@
       flexDirection: '${6:column}'},
       $7
     """
+
   'PropTypes':
     'prefix': 'PropTypes'
     'body': 'PropTypes.${1:string}${2:.isRequired},$3'
+
   'import common component':
     'prefix': 'import-common-component'
     'body': 'import ${1} from \'@common/js/components/${1}/${1}\';\n${2}'
+  'message':
+    'prefix': 'message'
+    'body': """
+      ${2:label}: {
+        id: '${1:some.path}.${2:label}',
+        defaultMessage: '${3}',
+      },
+    """
+
+  'saga':
+    'prefix': 'saga'
+    'body': """
+      import {takeEvery} from 'redux-saga';
+      import {call, put, select, take, fork} from 'redux-saga/effects';
+
+      export function* ${1}() {
+        ${2}
+      }
+    """
 
 
 '.source.scss':

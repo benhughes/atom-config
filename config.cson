@@ -1,4 +1,5 @@
 "*":
+  "advanced-open-file": {}
   "atom-beautify":
     general:
       _analyticsUserId: "ef96123c-6419-4c66-838d-e73329ae9c4f"
@@ -14,6 +15,8 @@
       ]
     packagesWithKeymapsDisabled: [
       "sort-lines"
+      "git-time-machine"
+      "split-diff"
     ]
   editor:
     invisibles: {}
@@ -25,6 +28,7 @@
   "file-watcher":
     promptWhenFileHasChangedOnDisk: false
   "flex-tool-bar": {}
+  "fuzzy-finder": {}
   "js-hyperclick": {}
   jumpy:
     highContrast: true
@@ -51,6 +55,8 @@
     groupPaletteColors: "by file"
     mergeColorDuplicates: true
     sortPaletteColors: "by name"
+  "pinned-tabs":
+    closeUnpinned: false
   "spell-check":
     grammars: [
       "source.js"
@@ -61,6 +67,8 @@
     hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
+  zentabs:
+    maximumOpenedTabs: 10
 ".python.source":
   editor:
     autoIndentOnPaste: true
