@@ -76,12 +76,9 @@
   'react component':
     'prefix': 'react-component'
     'body': """
-      import React, {
-        Component,
-        PropTypes,
-      } from 'react';
+      import React, {Component, PropTypes} from 'react';
       $2
-      class ${1:MyComponent} extends Component {
+      export class ${1:MyComponent} extends Component {
         static displayName = '${1:MyComponent}';
 
         static propTypes = {};
@@ -94,9 +91,6 @@
           );
         }
       }
-
-      export default ${1:MyComponent};$5
-
     """
   'react redux connected component':
     'prefix': 'react-redux-component'

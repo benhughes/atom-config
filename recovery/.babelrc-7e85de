@@ -1,0 +1,29 @@
+{
+  "passPerPreset": true,
+  "presets": [
+    "react-native"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "syntax-async-functions",
+    ["babel-plugin-module-resolver", {
+      "alias": {
+        "@common/js": "./common/js",
+        "@common/protos": "./common/protos",
+        "@vault": "./vault",
+      },
+    }],
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        ["babel-plugin-module-resolver", {
+          "alias": {
+            "@common/protos": "__GEN_COMMON_PROTOS_PATH__",
+          },
+        }],
+      ]
+    }
+  }
+}
