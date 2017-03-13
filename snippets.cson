@@ -304,6 +304,14 @@
     'prefix': 'PropTypes'
     'body': 'PropTypes.${1:string}${2:.isRequired},$3'
 
+  'destructure':
+    'prefix': 'const'
+    'body': 'const {$1} = $2;$3'
+
+  'propDestructure':
+    'prefix': 'const {'
+    'body': 'const {$1} = this.props;$3'
+
   'import common component':
     'prefix': 'import-common-component'
     'body': 'import ${1} from \'@common/js/components/${1}/${1}\';\n${2}'
