@@ -1,5 +1,7 @@
 "*":
-  "advanced-open-file": {}
+  "advanced-open-file":
+    createDirectories: true
+    createFileInstantly: true
   "atom-beautify":
     general:
       _analyticsUserId: "ef96123c-6419-4c66-838d-e73329ae9c4f"
@@ -20,7 +22,7 @@
     ]
     telemetryConsent: "no"
   editor:
-    fontSize: 15
+    fontSize: 17
     invisibles: {}
   "exception-reporting":
     userId: "ed07e8f5-587b-e6f1-39e5-bdef069f8693"
@@ -38,10 +40,11 @@
   jumpy:
     highContrast: true
     matchPattern: "([A-Z]+([0-9a-z])*)|[<a-z0-9]{2,}"
-  linter:
-    errorPanelHeight: 27
+  linter: {}
   "linter-eslint":
     useGlobalEslint: true
+  "linter-ui-default":
+    showPanel: true
   minimap:
     plugins:
       "highlight-selected": true
@@ -62,9 +65,16 @@
     sortPaletteColors: "by name"
   "pinned-tabs":
     closeUnpinned: false
+  "prettier-atom":
+    formatOnSaveOptions: {}
+    prettierOptions:
+      bracketSpacing: false
+      printWidth: 120
+      singleQuote: true
   "spell-check":
     grammars: [
       "source.js"
+      "source.js.jsx"
     ]
   "split-diff":
     diffWords: true
@@ -72,8 +82,12 @@
     leftEditorColor: "red"
     rightEditorColor: "green"
     scrollSyncType: "Vertical + Horizontal"
+  "tidy-tabs":
+    minimumTabs: 8
+    runOnSave: true
   "tool-bar":
     position: "Left"
+    visible: false
   "tree-view":
     hideVcsIgnoredFiles: true
   welcome:
